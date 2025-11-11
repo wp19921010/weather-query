@@ -7,11 +7,9 @@ npm-debug.log
 .idea
 *.spec.ts
 test/
-src/
 .prettierrc
 eslint.config.mjs
 nest-cli.json
-tsconfig*.json
 jest.config.js
 API_DOCS.md
 DEPLOYMENT_GUIDE.md
