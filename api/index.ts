@@ -13,12 +13,17 @@ async function getApp() {
     app = await NestFactory.create(AppModule);
     app.enableCors();
     await app.init();
+
+    // Get the Express instance
+    const instance = app.getHttpAdapter().getInstance();
+    console.log('NestJS app initialized for Vercel');
+    return instance;
   }
-  return app;
+  return app.getHttpAdapter().getInstance();
 }
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
-  const app = await getApp();
-  return app.getHttpAdapter().getInstance()(req, res);
+  const handler = await getApp();
+  return handler(req, res);
 };
 
