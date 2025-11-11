@@ -6,12 +6,18 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../src/app.module';
 import type { IncomingMessage, ServerResponse } from 'http';
 
-let app;
+let app: any;
 
 async function getApp() {
   if (!app) {
     app = await NestFactory.create(AppModule);
-    app.enableCors();
+    app.enableCors({
+      origin: '*',
+      credentials: true,
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'],
+      allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+      exposedHeaders: ['Content-Type'],
+    });
     await app.init();
   }
   return app;
