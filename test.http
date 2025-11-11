@@ -1,0 +1,55 @@
+### 天气查询 API 测试示例
+
+## 测试基础 URL
+@baseUrl = http://localhost:3000
+
+### 1. 按城市名查询天气 - 北京
+GET @baseUrl/weather/city?name=北京
+
+### 2. 按城市名查询天气 - 上海
+GET @baseUrl/weather/city?name=上海
+
+### 3. 按城市名查询天气 - 广州
+GET @baseUrl/weather/city?name=广州
+
+### 4. 按城市名查询天气 - 纽约（英文）
+GET @baseUrl/weather/city?name=New%20York
+
+### 5. 按坐标查询天气 - 北京坐标
+GET @baseUrl/weather/coordinates?lat=39.9042&lon=116.4074
+
+### 6. 按坐标查询天气 - 上海坐标
+GET @baseUrl/weather/coordinates?lat=31.2304&lon=121.4737
+
+### 7. 按坐标查询天气 - 纽约坐标
+GET @baseUrl/weather/coordinates?lat=40.7128&lon=-74.0060
+
+### 8. 按坐标查询天气 - 伦敦坐标
+GET @baseUrl/weather/coordinates?lat=51.5074&lon=-0.1278
+
+### 9. 获取默认城市（北京）天气
+GET @baseUrl/weather/default
+
+---
+
+## 使用说明
+
+这个文件可以用于以下工具：
+- **VS Code REST Client 插件** - 在 VS Code 中直接运行 HTTP 请求
+- **Postman** - 导入这些请求到 Postman
+- **IntelliJ IDEA HTTP Client** - 使用 IDE 的 HTTP 客户端
+
+## 常用城市坐标
+
+| 城市 | 纬度 | 经度 |
+|------|------|------|
+| 北京 | 39.9042 | 116.4074 |
+| 上海 | 31.2304 | 121.4737 |
+| 广州 | 23.1291 | 113.2644 |
+| 深圳 | 22.5431 | 114.0579 |
+| 西安 | 34.3416 | 108.9398 |
+| 纽约 | 40.7128 | -74.0060 |
+| 伦敦 | 51.5074 | -0.1278 |
+| 东京 | 35.6762 | 139.6503 |
+| 巴黎 | 48.8566 | 2.3522 |
+| 悉尼 | -33.8688 | 151.2093 |
